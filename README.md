@@ -27,7 +27,7 @@ First of all, you shouldn't trust it on its face at all. Instead, inspect the pr
 It's always kind of a balancing act figuring out how to do good while also doing well, but right now potential monetization options look like they'll be some combination of:
 1. **Subscription-based usage:** ask for some low monthly rate to keep access to the service's functions. A lot of people are interested in ethical consumption, but it's still not really known whether or not folks care enough to pay for the luxury of not having to think about what they buy.
 2. **Lead-generation for companies:** since using the platform requires members to explicitly state what moral stances they care about, we can easily "matchmake" between members and companies that might want to advertise to them. This would involve doing data-sharing, and we'd ask for consent first.
-3. **Donation box:** Wikipedia has been keeping their servers up for years, and as far as I can tell, their only revenue stream is from die-hard donaters who understand what a valuable service it is, and how costly it can be to serve content. This might work for us too.
+3. **Donation box:** Wikipedia has been keeping their servers up for years, and as far as I can tell, their only revenue stream is from die-hard donors who understand what a valuable service it is, and how costly it can be to serve content. This might work for us too.
 
 Unfortunately we can't just make the service free, because hosting services on the web can be expensive (especially if it's used frequently), so this is always going to be a concern for us and for you.
 
