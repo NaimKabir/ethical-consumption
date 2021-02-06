@@ -33,7 +33,10 @@ Unfortunately we can't just make the service free, because hosting services on t
 
 ## Usage
 
-
+1. Install the Chrome extension by visiting [PLACEHOLDER].
+2. Use the default list of ethical positions, or select each tag that aligns with your personal ethics.
+3. Visit the checkout page of various e-commerce platforms with products in your cart. A warning message will appear if we've detected that any of the products were made by companies that violate your values anywhere in their supply chains.
 
 ## Community
 
+The mapping between products, companies, and objective reporting on ethical or unethical behavior is painstakingly maintained by a dedicated community. Though, to start, the editing community will be restricted to a dedicated and selective few, it is designed to be a community effort where we collectively maintain the truth on corporate behaviors. 
