@@ -1,11 +1,7 @@
-name: Node.js CI
-
-on:
-  push:
-    branches: [ $default-branch ]
-  pull_request:
-    branches: [ $default-branch ]
-
+name: CI
+services:
+  - docker
+on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
