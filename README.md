@@ -44,14 +44,10 @@ The mapping between products, companies, and objective reporting on ethical or u
 
 # Development
 
-You can build the server with:
+You can build the project with:
 
-`bazel run //server:api`
+`bazel run //...`
 
-Or on MacOS:
+The development server can be started with:
 
-`bazel run //server:api --platforms @build_bazel_rules_nodejs//toolchains/node:linux_amd64`
-
-The container can then be run and listen on port 4000 with:
-
-`docker run -p 4000:4000 bazel/server:api`
+`cd server; docker-compose --file docker-compose.yml up --detach`

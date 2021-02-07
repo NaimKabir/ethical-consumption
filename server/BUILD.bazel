@@ -41,3 +41,9 @@ container_image(
         "4000/tcp",
     ],
 )
+
+# Database container (mocking an external RDS instance, for example)
+container_image(
+    name = "database",
+    base = "@psql//image",
+)

@@ -49,6 +49,14 @@ load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
 
 container_deps()
 
+load("@io_bazel_rules_docker//container:container.bzl", "container_pull")
+container_pull(
+    name = "psql",
+    registry = "index.docker.io",
+    repository = "library/postgres",
+    digest = "sha256:29351fa971769c793d19e75e98c71ca7e00ad981267bcd99590862917eea2713" # postgres:latest
+)
+
 load(
     "@io_bazel_rules_docker//nodejs:image.bzl",
     _nodejs_image_repos = "repositories",
