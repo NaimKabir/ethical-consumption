@@ -1,0 +1,43 @@
+package(default_visibility=["//visibility:public"])
+
+load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary")
+load("@io_bazel_rules_docker//nodejs:image.bzl", "nodejs_image")
+load("@io_bazel_rules_docker//container:container.bzl", "container_image")
+load("@npm//typescript:index.bzl", "tsc")
+load("@npm//@bazel/typescript:index.bzl", "ts_library")
+
+ts_library(
+    name = "src",
+    srcs = ["src/app.ts"],
+    tsconfig = "//:tsconfig.json",
+    deps = [
+        "@npm//typescript",
+        "@npm//@types/node",
+        "@npm//@types/express",
+        "@npm//@bazel/typescript"
+    ],
+)
+
+filegroup(
+    name = "app.js",
+    srcs = [":src"],
+    output_group = "es5_sources",
+)
+
+nodejs_image(
+    name = "api-image",
+    entry_point = ":app.js",
+    data = [
+        ":app.js",
+        "@npm//express"
+    ],
+)
+
+# Extra docker layer to publish ports
+container_image(
+    name = "api",
+    base = ":api-image",
+    ports = [
+        "4000/tcp",
+    ],
+)
