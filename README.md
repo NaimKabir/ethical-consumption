@@ -40,3 +40,17 @@ Unfortunately we can't just make the service free, because hosting services on t
 ## Community
 
 The mapping between products, companies, and objective reporting on ethical or unethical behavior is painstakingly maintained by a dedicated community. Though, to start, the editing community will be restricted to a dedicated and selective few, it is designed to be a community effort where we collectively maintain the truth on corporate behaviors. 
+
+# Development
+
+You can build the server with:
+
+`bazel run //server:api`
+
+Or on MacOS:
+
+`bazel run //server:api --platforms @build_bazel_rules_nodejs//toolchains/node:linux_amd64`
+
+The container can then be run and listen on port 4000 with:
+
+`docker run -p 4000:4000 bazel/server:api`
