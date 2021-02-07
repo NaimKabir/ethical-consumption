@@ -50,11 +50,21 @@ load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
 container_deps()
 
 load("@io_bazel_rules_docker//container:container.bzl", "container_pull")
+
+# Pull postgres base container
 container_pull(
     name = "psql",
     registry = "index.docker.io",
     repository = "library/postgres",
     digest = "sha256:29351fa971769c793d19e75e98c71ca7e00ad981267bcd99590862917eea2713" # postgres:latest
+)
+
+# Pull MediaWiki base container
+container_pull(
+    name = "mediawiki",
+    registry = "index.docker.io",
+    repository = "library/mediawiki",
+    digest = "sha256:944d0c01466de418d57e0a0182f1b30a22872050f7383f8ce541701828336110" # mediawiki:latest
 )
 
 load(

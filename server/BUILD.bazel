@@ -47,3 +47,9 @@ container_image(
     name = "database",
     base = "@psql//image",
 )
+
+# Mediawiki container
+container_image(
+    name = "wiki",
+    base = "@mediawiki//image"
+)
