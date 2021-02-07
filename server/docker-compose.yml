@@ -1,0 +1,18 @@
+version: "3.8"
+
+services: 
+    db:
+        image: bazel/server:database
+        container_name: database
+        environment:
+            POSTGRES_DB: default
+            POSTGRES_PASSWORD: secret
+    api:
+        image: bazel/server:api
+        container_name: api
+        environment: 
+            DB_HOST: db
+            DB_DATABASE: default
+            DB_PASSWORD: secret
+        ports: 
+            - 4000:4000
