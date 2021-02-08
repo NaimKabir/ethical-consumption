@@ -8,6 +8,12 @@ arg=$1
 if [ "$arg" == "up" ];
 then
     cd server; docker-compose --file docker-compose.yml up --detach; cd -
+
+    # restore wiki set-up tables
+    echo "Constructing up Wiki tables..."
+    docker cp -L server/data/wiki_set_up.sql database:.
+    docker exec database bash -c "psql -U postgres -d default < wiki_set_up.sql"
+
     exit 0
 fi
 
