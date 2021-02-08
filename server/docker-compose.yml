@@ -33,9 +33,9 @@ services:
             - 8080:80
         links:
             - db
-        # volumes:
-        #     # - /var/www/html/images # Media uploads are a threat vector. Limit arbitrary file uploading
-        #     # After initial setup, download LocalSettings.php to the same directory as
-        #     # this yaml and uncomment the following line and use compose to restart
-        #     # the mediawiki service
-        #     - ./LocalSettings.php:/var/www/html/LocalSettings.php
+        volumes:
+            # - /var/www/html/images # Media uploads are a threat vector. Limit arbitrary file uploading
+            # After initial setup, download LocalSettings.php to the same directory as
+            # this yaml and uncomment the following line and use compose to restart
+            # the mediawiki service
+            - ./LocalSettings.php:/var/www/html/LocalSettings.php

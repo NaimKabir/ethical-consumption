@@ -8,5 +8,7 @@ sh_binary(
         "//server:wiki",
         "//server:database",
         "//server:docker-compose.yml",
+        "//server:data/wiki_set_up.sql",
+        "//server:LocalSettings.php",
     ],
 )
