@@ -3,6 +3,7 @@ package(default_visibility=["//visibility:public"])
 load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary")
 load("@io_bazel_rules_docker//nodejs:image.bzl", "nodejs_image")
 load("@io_bazel_rules_docker//container:container.bzl", "container_image")
+load("@io_bazel_rules_docker//docker/util:run.bzl", "container_run_and_commit")
 load("@npm//typescript:index.bzl", "tsc")
 load("@npm//@bazel/typescript:index.bzl", "ts_library")
 
@@ -48,8 +49,22 @@ container_image(
     base = "@psql//image",
 )
 
-# Mediawiki container
+# Mediawiki container set-up
+container_run_and_commit(
+    name = "wiki_base",
+    image = "@mediawiki//image",
+    # install postgres drivers
+    commands = [
+        "apt-get update",
+        "apt-get install --no-install-recommends -y libpq-dev",
+        "docker-php-ext-install pgsql",
+        "apt-get clean",
+        "rm -rf /var/lib/apt/lists/*",
+    ],
+)
+
+# Wiki container
 container_image(
     name = "wiki",
-    base = "@mediawiki//image"
+    base = ":wiki_base",
 )
