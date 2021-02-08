@@ -46,8 +46,12 @@ The mapping between products, companies, and objective reporting on ethical or u
 
 You can build the project with:
 
-`bazel run //...`
+`bazel build //...`
 
 The development server can be started with:
 
-`cd server; docker-compose --file docker-compose.yml up --detach`
+`dc up`
+
+The development server can be taken down with:
+
+`dc down`
