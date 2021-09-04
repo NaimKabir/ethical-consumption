@@ -1,41 +1,17 @@
-# Bazel workspace created by @bazel/create 3.1.0
-
 workspace(
     # How this workspace would be referenced with absolute labels from another workspace
     name = "ethical-consumption",
-    # Map the @npm bazel workspace to the node_modules directory.
-    # This lets Bazel use the same node_modules as other local tooling.
-    managed_directories = {"@npm": ["node_modules"]},
 )
 
-# NodeJS rules
-
-# Install the nodejs "bootstrap" package
-# This provides the basic tools for running and packaging nodejs programs in Bazel
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
-http_archive(
-    name = "build_bazel_rules_nodejs",
-    sha256 = "dd4dc46066e2ce034cba0c81aa3e862b27e8e8d95871f567359f7a534cccb666",
-    urls = ["https://github.com/bazelbuild/rules_nodejs/releases/download/3.1.0/rules_nodejs-3.1.0.tar.gz"],
-)
-
-# The npm_install rule runs yarn anytime the package.json or package-lock.json file changes.
-# It also extracts any Bazel rules distributed in an npm package.
-load("@build_bazel_rules_nodejs//:index.bzl", "npm_install")
-npm_install(
-    # Name this npm so that Bazel Label references look like @npm//package
-    name = "npm",
-    package_json = "//:package.json",
-    package_lock_json = "//:package-lock.json",
-)
 
 # Docker rules
 
 http_archive(
     name = "io_bazel_rules_docker",
-    sha256 = "1698624e878b0607052ae6131aa216d45ebb63871ec497f26c67455b34119c80",
-    strip_prefix = "rules_docker-0.15.0",
-    urls = ["https://github.com/bazelbuild/rules_docker/releases/download/v0.15.0/rules_docker-v0.15.0.tar.gz"],
+    sha256 = "1f4e59843b61981a96835dc4ac377ad4da9f8c334ebe5e0bb3f58f80c09735f4",
+    strip_prefix = "rules_docker-0.19.0",
+    urls = ["https://github.com/bazelbuild/rules_docker/releases/download/v0.19.0/rules_docker-v0.19.0.tar.gz"],
 )
 
 load(
@@ -61,16 +37,9 @@ container_pull(
 
 # Pull MediaWiki base container
 container_pull(
-    name = "mediawiki",
+    name = "semantic-mediawiki",
     registry = "index.docker.io",
-    repository = "library/mediawiki",
-    digest = "sha256:944d0c01466de418d57e0a0182f1b30a22872050f7383f8ce541701828336110" # mediawiki:latest
+    repository = "naimkabir/semantic-mediawiki",
+    digest = "sha256:d14f4e025ddb671326d8bcd084f98c255f842d8ba4156f410f2d4cd5d2e33798" # naimkabir/semantic-mediawiki:3.2.3
 )
-
-load(
-    "@io_bazel_rules_docker//nodejs:image.bzl",
-    _nodejs_image_repos = "repositories",
-)
-
-_nodejs_image_repos()
 

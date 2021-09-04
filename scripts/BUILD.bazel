@@ -4,7 +4,6 @@ sh_binary(
     name = "dc",
     srcs = ["dc.sh"],
     data = [
-        "//server:api",
         "//server:wiki",
         "//server:database",
         "//server:docker-compose.yml",
