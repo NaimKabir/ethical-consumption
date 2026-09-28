@@ -1,6 +1,6 @@
-# ethical-consumption
+# corpopedia.org
 
-`ethical-consumption` is a service for linking consumption with ethical corporate behavior. Consumers should give bad actors less revenue, and should give good actors with good product more revenue.
+`corpopedia` is a service for linking consumption with ethical corporate behavior. Consumers should give bad actors less revenue, and should give good actors with good product more revenue.
 
 ## Purpose: A Moral Economy
 
