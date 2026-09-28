@@ -2,6 +2,8 @@
 
 `corpopedia` is a service for linking consumption with ethical corporate behavior. Consumers should give bad actors less revenue, and should give good actors with good product more revenue.
 
+It will be a collaboratively edited Semantic MediaWiki project with free API access forever.
+
 ## Purpose: A Moral Economy
 
 The promise of capitalism remains unfulfilled. Perfect allocation of consumer dollars towards goods and services is meant to reflect social values in our production systems and supply chains, but unethical behavior is rarely punished when we vote with our dollars.
