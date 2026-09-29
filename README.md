@@ -45,7 +45,7 @@ Unfortunately I can't just make the service free, because hosting services on th
 
 The mapping between products, companies, and objective reporting on ethical or unethical behavior is painstakingly maintained by a dedicated community. Though, to start, the editing community will be restricted to a dedicated and selective few, it is designed to be a community effort where we collectively maintain the truth on corporate behaviors.
 
-The community operates on purchasepedia.org, a site powered by open-source [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki) technology (just like Wikipedia). Using the native abstraction of `Category` labels to tag company pages with various ethical deeds and misdeeds, our group of volunteer editors powers moral purchasing habits.
+The community operates on corpopedia.org, a site powered by open-source [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki) technology (just like Wikipedia). Using the native abstraction of `Category` labels to tag company pages with various ethical deeds and misdeeds, our group of volunteer editors powers moral purchasing habits.
 
 # Development
 
